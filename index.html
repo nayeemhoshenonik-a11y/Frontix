@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Post Generation — Mock</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Left slim sidebar -->
+    <aside class="sidebar" aria-label="Main navigation">
+      <button class="sb-btn" aria-label="Dashboard" title="Dashboard">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="#8a8a8a" d="M3 3h8v8H3zM13 3h8v4h-8zM13 9h8v12h-8zM3 13h8v6H3z"/></svg>
+      </button>
+      <button class="sb-btn" aria-label="Writing" title="Writing">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="#8a8a8a" d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+      </button>
+      <div class="sb-spacer"></div>
+      <button class="sb-btn" aria-label="Settings" title="Settings">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="#8a8a8a" d="M19.14 12.94a7.07 7.07 0 000-1.88l2.03-1.58a.5.5 0 00.12-.64l-1.92-3.32a.5.5 0 00-.6-.22l-2.39.96a7.11 7.11 0 00-1.61-.94L14.5 2.5a.5.5 0 00-.49-.5h-3.98a.5.5 0 00-.49.5l-.37 2.59c-.58.2-1.12.46-1.61.79l-2.39-.96a.5.5 0 00-.6.22L2.7 8.84a.5.5 0 00.12.64l2.03 1.58c-.05.31-.08.62-.08.94s.03.63.08.94L2.82 14.4a.5.5 0 00-.12.64l1.92 3.32c.14.24.43.34.68.27l2.39-.96c.5.33 1.03.59 1.61.79l.37 2.59c.05.28.28.5.56.5h3.98c.28 0 .51-.22.56-.5l.37-2.59c.58-.2 1.12-.46 1.61-.79l2.39.96c.25.07.54-.03.68-.27l1.92-3.32a.5.5 0 00-.12-.64l-2.03-1.58zM12 15.5A3.5 3.5 0 1112 8.5a3.5 3.5 0 010 7z"/></svg>
+      </button>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main">
+      <!-- Top bar -->
+      <header class="topbar">
+        <div class="breadcrumbs">Dashboard › Writing</div>
+        <div class="address-pill" role="search" aria-label="Address">
+          <svg viewBox="0 0 24 24" width="18" height="18" class="link-icon"><path fill="#4b5563" d="M12 2a5 5 0 00-5 5v1H6a2 2 0 00-2 2v3.5A6.5 6.5 0 0010.5 20H13a2 2 0 002-2v-1h1a5 5 0 000-10h-4V7a3 3 0 013-3h.5"/></svg>
+          <span class="address-text">tools-cross.vly.sh</span>
+        </div>
+        <div class="top-actions">
+          <button class="icon-btn" aria-label="Theme"><svg viewBox="0 0 24 24" width="18" height="18"><path fill="#6b7280" d="M12 3v2M12 19v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4M12 7a5 5 0 100 10 5 5 0 000-10z"/></svg></button>
+          <div class="avatar" aria-hidden="true">A</div>
+        </div>
+      </header>
+
+      <!-- Page heading -->
+      <section class="page">
+        <h1 class="page-title">Post Generation</h1>
+        <p class="page-desc">Create engaging content for your audience in seconds.</p>
+
+        <!-- Form card -->
+        <section class="card form-card" aria-labelledby="postgen-title">
+          <div class="card-header" id="postgen-title">
+            <div class="personalized">
+              <label class="switch">
+                <input type="checkbox" id="togglePersonal">
+                <span class="slider"></span>
+              </label>
+              <span>Personalized Content</span>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <div class="tabs" role="tablist" aria-label="Content types">
+              <button class="tab active" data-type="topic" role="tab" aria-selected="true">Topic</button>
+              <button class="tab" data-type="image" role="tab">Image</button>
+              <button class="tab" data-type="youtube" role="tab">YouTube</button>
+              <button class="tab" data-type="pdf" role="tab">PDF</button>
+              <button class="tab" data-type="article" role="tab">Article</button>
+              <button class="tab" data-type="custom" role="tab">Custom</button>
+            </div>
+
+            <label class="field-label" for="topic">Topic</label>
+            <textarea id="topic" class="textarea" rows="4" placeholder="Enter your topic or idea..."></textarea>
+
+            <div class="row two-cols">
+              <div class="col">
+                <label class="field-label" for="format">Format</label>
+                <select id="format" class="select">
+                  <option>LinkedIn Post</option>
+                  <option>Twitter Thread</option>
+                  <option>Instagram Caption</option>
+                </select>
+              </div>
+              <div class="col">
+                <label class="field-label" for="persontype">Person Type</label>
+                <select id="persontype" class="select">
+                  <option>1st Person (I, We)</option>
+                  <option>3rd Person (He, She, They)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col one">
+                <label class="field-label" for="style">Writing Style</label>
+                <select id="style" class="select">
+                  <option>Professional</option>
+                  <option>Casual</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="actions">
+              <button id="generateBtn" class="btn primary" aria-live="polite">
+                <svg viewBox="0 0 24 24" width="16" height="16"><path fill="#fff" d="M12 2v20M2 12h20" /></svg>
+                Generate Post
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Post Preview heading -->
+        <h2 class="preview-title">Post Preview</h2>
+
+        <!-- Preview card -->
+        <section class="card preview-card" aria-live="polite">
+          <div class="preview-head">
+            <div class="author">
+              <div class="avatar small">Y</div>
+              <div class="meta">
+                <div class="name">Your Name</div>
+                <div class="role">Content Creator • Now</div>
+              </div>
+            </div>
+            <div class="preview-actions">
+              <button class="btn small ghost" id="editPost">Edit Post</button>
+              <button class="btn small outline" id="copyText">Copy Text</button>
+            </div>
+          </div>
+
+          <div class="preview-body">
+            <p id="previewText" class="placeholder">Your generated post content will appear here...</p>
+
+            <div class="preview-footer">
+              <div class="stats">
+                <span class="dot"></span>
+                <span class="likes">124</span>
+                <span class="comments">12 comments</span>
+              </div>
+              <button class="icon-btn send" aria-label="Send post">
+                <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#9ca3af" d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg>
+              </button>
+            </div>
+          </div>
+        </section>
+
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
